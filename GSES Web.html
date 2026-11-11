@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="km" class="scroll-smooth" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>សាលាអប់រំពិសេសនៃការលូតលាស់ - GSES</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Kantumruy Pro & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Kantumruy Pro"', '"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf2f4',
+                            100: '#fce7ea',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-800 text-white text-xs sm:text-sm py-2 px-4 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+                <span><i class="fas fa-phone-alt mr-1.5 text-pink-200"></i> Tel: +855 12 713 148</span>
+                <span><i class="fas fa-envelope mr-1.5 text-pink-200"></i> samnagphok@yahoo.com</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <!-- Language Switcher Button -->
+                <button onclick="switchLanguage()" id="lang-btn" class="bg-white/20 hover:bg-white/30 text-white text-xs font-semibold px-3 py-1 rounded-full transition flex items-center gap-1.5">
+                    <i class="fas fa-globe"></i> <span id="lang-text">English</span>
+                </button>
+                <div class="flex items-center gap-3">
+                    <a href="https://t.me/012713148" target="_blank" class="hover:text-pink-200 transition" title="Telegram"><i class="fab fa-telegram text-lg"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100027584873077" target="_blank" class="hover:text-pink-200 transition" title="Facebook"><i class="fab fa-facebook text-lg"></i></a>
+                    <a href="https://www.youtube.com/@GSES_SpecialSchool" target="_blank" class="hover:text-pink-200 transition" title="YouTube"><i class="fab fa-youtube text-lg"></i></a>
+                    <a href="https://www.tiktok.com/@gses_school" target="_blank" class="hover:text-pink-200 transition" title="TikTok"><i class="fab fa-tiktok text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-brand-600 flex items-center justify-center bg-white shadow-md">
+                    <img src="LOGO.jpg" alt="GSES Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm sm:text-lg text-brand-700 leading-tight" data-km="សាលាអប់រំពិសេសនៃការលូតលាស់" data-en="Growing Special Education School">សាលាអប់រំពិសេសនៃការលូតលាស់</h1>
+                    <p class="text-[11px] text-slate-500 font-medium">Growing Special Education School (GSES)</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-6 font-medium text-slate-700 text-sm">
+                <a href="#home" class="hover:text-brand-600 transition" data-km="ទំព័រដើម" data-en="Home">ទំព័រដើម</a>
+                <a href="#history" class="hover:text-brand-600 transition" data-km="ប្រវត្តិសាលា" data-en="History">ប្រវត្តិសាលា</a>
+                <a href="#building-project" class="hover:text-brand-600 transition" data-km="គម្រោងអគារ" data-en="Building Project">គម្រោងអគារ</a>
+                <a href="#vision-mission" class="hover:text-brand-600 transition" data-km="ចក្ខុវិស័យ និងបេសកកម្ម" data-en="Vision & Mission">ចក្ខុវិស័យ និងបេសកកម្ម</a>
+                <a href="#services-goals" class="hover:text-brand-600 transition" data-km="សេវាកម្ម និងគោលដៅ" data-en="Services & Goals">សេវាកម្ម និងគោលដៅ</a>
+                <a href="#notice" class="hover:text-brand-600 transition" data-km="សេចក្តីជូនដំណឹង" data-en="Notice">សេចក្តីជូនដំណឹង</a>
+                <a href="#programs" class="hover:text-brand-600 transition" data-km="ថ្នាក់ជំនាញ" data-en="Programs">ថ្នាក់ជំនាញ</a>
+                <a href="#contact" class="bg-brand-600 text-white px-4 py-2 rounded-full hover:bg-brand-700 transition shadow-sm" data-km="ទំនាក់ទំនង" data-en="Contact">ទំនាក់ទំនង</a>
+            </nav>
+
+            <div class="md:hidden flex items-center">
+                <button id="menu-btn" class="text-slate-700 focus:outline-none text-2xl p-1">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 pt-3 pb-4 space-y-2 shadow-lg">
+            <a href="#home" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="ទំព័រដើម" data-en="Home">ទំព័រដើម</a>
+            <a href="#history" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="ប្រវត្តិសាលា" data-en="History">ប្រវត្តិសាលា</a>
+            <a href="#building-project" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="គម្រោងអគារសិក្សាថ្មី" data-en="New Building Project">គម្រោងអគារសិក្សាថ្មី</a>
+            <a href="#vision-mission" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="ចក្ខុវិស័យ និងបេសកកម្ម" data-en="Vision & Mission">ចក្ខុវិស័យ និងបេសកកម្ម</a>
+            <a href="#services-goals" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="សេវាកម្ម និងគោលដៅ" data-en="Services & Goals">សេវាកម្ម និងគោលដៅ</a>
+            <a href="#notice" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="សេចក្តីជូនដំណឹង" data-en="Notice">សេចក្តីជូនដំណឹង</a>
+            <a href="#programs" class="block py-2 text-slate-700 hover:text-brand-600 font-medium" data-km="ថ្នាក់ជំនាញ" data-en="Programs">ថ្នាក់ជំនាញ</a>
+            <a href="#contact" class="block py-2 text-brand-600 font-semibold" data-km="ទំនាក់ទំនងផ្ទាល់" data-en="Direct Contact">ទំនាក់ទំនងផ្ទាល់</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-brand-50 via-white to-pink-50 py-16 md:py-24 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-center md:text-left">
+                <span class="inline-block bg-brand-100 text-brand-700 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm" data-km="ទីណមានការអប់រំ ទីនោះមានការលូតលាស់" data-en="Where there is education, there is growth">
+                    ទីណមានការអប់រំ ទីនោះមានការលូតលាស់
+                </span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                    <span data-km="សាលាអប់រំពិសេស" data-en="Growing Special Education">សាលាអប់រំពិសេស</span> <br><span class="text-brand-600" data-km="នៃការលូតលាស់ (GSES)" data-en="School (GSES)">នៃការលូតលាស់ (GSES)</span>
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed" data-km="សាលាអប់រំពិសេសនៃការលូតលាស់ (GSES) គឺជាគម្រោងរបស់ព្រះសហគមន៍ព្រះកុមារយេស៊ូ បឹងទំពន់ រាជធានីភ្នំពេញ ផ្ដល់ការអប់រំពិសេស និងបណ្ដុះបណ្ដាលជំនាញប្រកបដោយក្ដីស្រលាញ់ និងការយកចិត្តទុកដាក់ខ្ពស់។" data-en="Growing Special Education School (GSES) is a Catholic Church project (Child Jesus Parish, Beong Tumpun Phnom Penh, Cambodia), providing special education with great love and care.">
+                    សាលាអប់រំពិសេសនៃការលូតលាស់ (GSES) គឺជាគម្រោងរបស់ព្រះសហគមន៍ព្រះកុមារយេស៊ូ បឹងទំពន់ រាជធានីភ្នំពេញ ផ្ដល់ការអប់រំពិសេស និងបណ្ដុះបណ្ដាលជំនាញប្រកបដោយក្ដីស្រលាញ់ និងការយកចិត្តទុកដាក់ខ្ពស់។
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start pt-2">
+                    <a href="https://t.me/012713148" target="_blank" class="bg-brand-600 hover:bg-brand-700 text-white font-medium px-6 py-3.5 rounded-xl shadow-lg shadow-brand-600/20 transition flex items-center gap-2">
+                        <i class="fab fa-telegram-plane text-xl"></i> Telegram: 012 713 148
+                    </a>
+                    <a href="#building-project" class="bg-white border border-brand-300 hover:bg-brand-50 text-brand-700 font-medium px-6 py-3.5 rounded-xl transition shadow-sm flex items-center gap-2">
+                        <i class="fas fa-hand-holding-heart"></i> <span data-km="ចូលរួមឧបត្ថម្ភសាងសង់អគារ" data-en="Donate to Build School">ចូលរួមឧបត្ថម្ភសាងសង់អគារ</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white w-full max-w-lg">
+                    <img src="IMG_8592.JPG" alt="GSES Activities" class="w-full h-auto object-cover max-h-[420px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase" data-km="ប្រវត្តិដើមទង" data-en="Our History">ប្រវត្តិដើមទង</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 mb-4" data-km="ប្រវត្តិសង្ខេបនៃការបង្កើតសាលាអប់រំពិសេសនៃការលូតលាស់" data-en="Brief History of Growing Special Education School">ប្រវត្តិសង្ខេបនៃការបង្កើតសាលាអប់រំពិសេសនៃការលូតលាស់</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-slate-700 leading-relaxed bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+                    <p data-km="សាលាអប់រំពិសេសនៃការលូតលាស់ (GSES) ត្រូវបានបង្កើតឡើងនៅថ្ងៃទី០១ ខែមិថុនា ឆ្នាំ២០១៧ ក្រោមការផ្តួចផ្តើមដោយ លោកស្រី ភោគ ម៉ានី ដែលជាអ្នកម្តាយមានកូនមានបញ្ហាអូទីស្សឹម។ ដោយសារការជួបប្រទះភាពពិបាកក្នុងការស្វែងរកសាលាទទួលកូនចូលរៀន លោកស្រីបានសម្រេចចិត្តស្នើសុំជំនួយពីព្រះសហគមន៍ព្រះកុមារយេស៊ូ (Child Jesus Parish, Boeng Tumpun, Phnom Penh, Cambodia)。" data-en="Growing Special Education School (GSES) was established on June 1, 2017, initiated by Mrs. Phok Many, a mother of an autistic child. Due to the difficulty in finding a school to accept her child, she decided to ask for help from the Child Jesus Parish (Boeng Tumpun, Phnom Penh, Cambodia).">
+                        សាលាអប់រំពិសេសនៃការលូតលាស់ (GSES) ត្រូវបានបង្កើតឡើងនៅថ្ងៃទី០១ ខែមិថុនា ឆ្នាំ២០១៧ ក្រោមការផ្តួចផ្តើមដោយ លោកស្រី ភោគ ម៉ានី ដែលជាអ្នកម្តាយមានកូនមានបញ្ហាអូទីស្សឹម។ ដោយសារការជួបប្រទះភាពពិបាកក្នុងការស្វែងរកសាលាទទួលកូនចូលរៀន លោកស្រីបានសម្រេចចិត្តស្នើសុំជំនួយពីព្រះសហគមន៍ព្រះកុមារយេស៊ូ (Child Jesus Parish, Boeng Tumpun, Phnom Penh, Cambodia)。
+                    </p>
+                    <p data-km="ព្រះសហគមន៍ព្រះកុមារយេស៊ូបានជួយក្នុងការចាប់ផ្តើមបង្កើតសាលាតូចមួយដែលមានឈ្មោះថា “សាលាអប់រំពិសេសនៃការលូតលាស់” ដោយមានដើមទុនដំបូងត្រឹមតែ ៣,០០០ ដុល្លារប៉ុណ្ណោះ សម្រាប់បណ្តុះបណ្តាលបុគ្គលិកចំនួន ៦នាក់。" data-en="The Child Jesus Parish helped initiate a small school named 'Growing Special Education School' with an initial budget of only $3,000 to train 6 staff members.">
+                        ព្រះសហគមន៍ព្រះកុមារយេស៊ូបានជួយក្នុងការចាប់ផ្តើមបង្កើតសាលាតូចមួយដែលមានឈ្មោះថា “សាលាអប់រំពិសេសនៃការលូតលាស់” ដោយមានដើមទុនដំបូងត្រឹមតែ ៣,០០០ ដុល្លារប៉ុណ្ណោះ សម្រាប់បណ្តុះបណ្តាលបុគ្គលិកចំនួន ៦នាក់。
+                    </p>
+                    <p data-km="ការចាប់ផ្តើមដំបូងគឺនៅក្នុងបន្ទប់ផ្ទះជួលតូចមួយជាប់នឹងអគារព្រះសហគមន៍ ដែលត្រូវបានកែលម្អជាបន្ទប់រៀន ការិយាល័យ និងបន្ទប់ព្យាបាលការនិយាយ。" data-en="The beginning started in a small rented room next to the parish building, which was adapted into classrooms, an office, and a speech therapy room.">
+                        ការចាប់ផ្តើមដំបូងគឺនៅក្នុងបន្ទប់ផ្ទះជួលតូចមួយជាប់នឹងអគារព្រះសហគមន៍ ដែលត្រូវបានកែលម្អជាបន្ទប់រៀន ការិយាល័យ និងបន្ទប់ព្យាបាលការនិយាយ。
+                    </p>
+                    <p data-km="ដោយសារចំនួនកុមារមានការកើនឡើងពីមួយថ្ងៃទៅមួយថ្ងៃ ធ្វើឱ្យសាលាមិនមានកន្លែងគ្រប់គ្រាន់ នៅថ្ងៃទី២៨ ខែសីហា ឆ្នាំ២០២២ គណៈកម្មការសាលាបានបង្កើតសាលាបន្ថែមមួយល្វែងទៀត (រំលងគ្នាមួយល្វែងពីទីតាំងចាស់) ហើយនៅឆ្នាំ២០២៣ សាលាបានពង្រីកបន្ថែមមួយល្វែងទៀតដែលនៅជាប់គ្នាទាំងបីល្វែង。" data-en="Due to the daily increase of children making the school lack space, on August 28, 2022, the school committee opened another building (skipping one building from the old location), and in 2023, the school expanded another building connected to all three buildings.">
+                        ដោយសារចំនួនកុមារមានការកើនឡើងពីមួយថ្ងៃទៅមួយថ្ងៃ ធ្វើឱ្យសាលាមិនមានកន្លែងគ្រប់គ្រាន់ នៅថ្ងៃទី២៨ ខែសីហា ឆ្នាំ២០២២ គណៈកម្មការសាលាបានបង្កើតសាលាបន្ថែមមួយល្វែងទៀត (រំលងគ្នាមួយល្វែងពីទីតាំងចាស់) ហើយនៅឆ្នាំ២០២៣ សាលាបានពង្រីកបន្ថែមមួយល្វែងទៀតដែលនៅជាប់គ្នាទាំងបីល្វែង。
+                    </p>
+                    <p data-km="ពីដំបូងក្នុងឆ្នាំ២០១៧ មានកុមារត្រឹមតែ ៦នាក់ប៉ុណ្ណោះស្មើនឹងចំនួនបុគ្គលិក តែមកដល់បច្ចុប្បន្នសាលាមានសិស្សសរុប ៣៣០នាក់ បុគ្គលិកចំនួន ១១០នាក់ និងមានអគារសិក្សាសរុប ៤ផ្ទះល្វែង (ថ្នាក់រៀនសរុប ២០បន្ទប់)。" data-en="Initially in 2017 there were only 6 children equal to the number of staff, but currently the school has a total of 330 students, 110 staff members, and a total of 4 buildings (20 classrooms).">
+                        ពីដំបូងក្នុងឆ្នាំ២០១៧ មានកុមារត្រឹមតែ ៦នាក់ប៉ុណ្ណោះស្មើនឹងចំនួនបុគ្គលិក តែមកដល់បច្ចុប្បន្នសាលាមានសិស្សសរុប ៣៣០នាក់ បុគ្គលិកចំនួន ១១០នាក់ និងមានអគារសិក្សាសរុប ៤ផ្ទះល្វែង (ថ្នាក់រៀនសរុប ២០បន្ទប់)。
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white">
+                        <img src="IMG_8592.JPG" alt="GSES History" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="bg-gradient-to-r from-brand-700 to-brand-600 p-8 rounded-3xl text-white shadow-lg space-y-3">
+                        <h4 class="font-bold text-xl" data-km="ពរជ័យ និងក្តីសង្ឃឹម" data-en="Blessings & Hope">ពរជ័យ និងក្តីសង្ឃឹម</h4>
+                        <p class="italic text-pink-100 text-sm leading-relaxed" data-km="“សូមព្រះប្រទានពរដល់កុមារអូទីស្សឹម ឪពុកម្តាយ លោកគ្រូ-អ្នកគ្រូ និងអ្នកអាណាព្យាបាលទាំងអស់គ្នា! អាម៉ែន”" data-en="“God bless the kids with autism, their parents, educators and guardians! Amen”">
+                            “សូមព្រះប្រទានពរដល់កុមារអូទីស្សឹម ឪពុកម្តាយ លោកគ្រូ-អ្នកគ្រូ និងអ្នកអាណាព្យាបាលទាំងអស់គ្នា! អាម៉ែន”
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Building Project Section (Donate 1$ Campaign with QR Code) -->
+    <section id="building-project" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 text-brand-600 font-bold text-sm tracking-wider uppercase bg-brand-50 px-4 py-1.5 rounded-full mb-3">
+                    <i class="fas fa-heart animate-pulse"></i> <span data-km="យុទ្ធនាការសប្បុរសធម៌" data-en="Charity Campaign">យុទ្ធនាការសប្បុរសធម៌</span>
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4" data-km="Donate 1$ to build a school for children with Autism" data-en="Donate 1$ to build a school for children with Autism">Donate 1$ to build a school for children with Autism</h2>
+                <p class="text-xl font-bold text-brand-600 mb-4">1$ One Dream</p>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600" data-km="គម្រោងសាងសង់អគារសិក្សាថ្មី ដើម្បីផ្តល់ឱកាសអប់រំដល់កុមារមានបញ្ហាអូទីស្សឹមឱ្យបានកាន់តែច្រើន" data-en="New school building project to provide educational opportunities for more children with autism">គម្រោងសាងសង់អគារសិក្សាថ្មី ដើម្បីផ្តល់ឱកាសអប់រំដល់កុមារមានបញ្ហាអូទីស្សឹមឱ្យបានកាន់តែច្រើន</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-slate-700 leading-relaxed bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+                    <p data-km="បច្ចុប្បន្ននេះ សាលាបានជួលផ្ទះល្វែងមកធ្វើជាអគារសិក្សា ដោយបានយកបន្ទប់ដេក និងផ្ទះបាយមកប្រើប្រាស់ធ្វើជាថ្នាក់រៀន ដែលមិនសមស្របសម្រាប់ការរៀន ការបង្រៀន និងការធ្វើសកម្មភាពផ្សេងៗ。" data-en="Currently, the school has rented flats as school buildings, using bedrooms and kitchens as classrooms, which is not suitable for teaching, learning and other activities.">
+                        បច្ចុប្បន្ននេះ សាលាបានជួលផ្ទះល្វែងមកធ្វើជាអគារសិក្សា ដោយបានយកបន្ទប់ដេក និងផ្ទះបាយមកប្រើប្រាស់ធ្វើជាថ្នាក់រៀន ដែលមិនសមស្របសម្រាប់ការរៀន ការបង្រៀន និងការធ្វើសកម្មភាពផ្សេងៗ。
+                    </p>
+                    <p data-km="ពីមួយថ្ងៃទៅមួយថ្ងៃ ចំនួនកុមារដែលបានមកចុះឈ្មោះចូលរៀន កាន់តែមានការកើនឡើងជាប់លាប់。 ដូច្នេះហើយ ទើបគណៈកម្មការសាលា បានមូលមតិគ្នាបង្កើតគម្រោងសាងសង់អគារសិក្សាថ្មី ដែលមានលក្ខណៈស្តង់ដារទូលាយស្រឡះ ដើម្បីជួយដល់ការរៀននិងបង្រៀន កាន់តែមានភាពប្រសើរឡើង និងជាពិសេសធ្វើឱ្យសាលាអាចទទួលកុមារ និងគ្រួសារមកទទួលការអប់រំកាន់តែច្រើនបន្ថែមទៀត。" data-en="Day by day, the number of children registering has been increasing continuously. Therefore, the school committee agreed to initiate the construction of a new school building with standard and spacious features to facilitate teaching and learning, and especially allow the school to welcome more children and families.">
+                        ពីមួយថ្ងៃទៅមួយថ្ងៃ ចំនួនកុមារដែលបានមកចុះឈ្មោះចូលរៀន កាន់តែមានការកើនឡើងជាប់លាប់。 ដូច្នេះហើយ ទើបគណៈកម្មការសាលា បានមូលមតិគ្នាបង្កើតគម្រោងសាងសង់អគារសិក្សាថ្មី ដែលមានលក្ខណៈស្តង់ដារទូលាយស្រឡះ ដើម្បីជួយដល់ការរៀននិងបង្រៀន កាន់តែមានភាពប្រសើរឡើង និងជាពិសេសធ្វើឱ្យសាលាអាចទទួលកុមារ និងគ្រួសារមកទទួលការអប់រំកាន់តែច្រើនបន្ថែមទៀត。
+                    </p>
+                    
+                    <div class="p-6 bg-brand-50 rounded-2xl border border-brand-200 space-y-2 text-center sm:text-left">
+                        <h4 class="font-bold text-brand-700 text-lg" data-km="សូមជួយឧបត្ថម្ភថវិកា ១ដុល្លារ សម្រាប់ក្តីស្រមៃកុមារអូទីស្សឹម!" data-en="Please donate 1$ for children with autism's dream!">
+                            សូមជួយឧបត្ថម្ភថវិកា ១ដុល្លារ សម្រាប់ក្តីស្រមៃកុមារអូទីស្សឹម!
+                        </h4>
+                        <p class="text-sm text-slate-600" data-km="ស្កេន QR Code ខាងក្រោមដើម្បីចូលរួមចំណែកបរិច្ចាគតាមរយៈប្រព័ន្ធទូទាត់ប្រាក់៖" data-en="Scan the QR code below to contribute via payment system:">
+                            ស្កេន QR Code ខាងក្រោមដើម្បីចូលរួមចំណែកបរិច្ចាគតាមរយៈប្រព័ន្ធទូទាត់ប្រាក់៖
+                        </p>
+                    </div>
+                </div>
+
+                <!-- QR Code Donation Card -->
+                <div class="bg-gradient-to-br from-brand-800 to-brand-600 p-8 rounded-3xl text-white shadow-2xl text-center space-y-6">
+                    <h3 class="text-2xl font-black tracking-wide" data-km="Donate 1$ to build a school" data-en="Donate 1$ to build a school">Donate 1$ to build a school</h3>
+                    <p class="text-pink-100 text-sm" data-km="for children with Autism, please!!!!" data-en="for children with Autism, please!!!!">for children with Autism, please!!!!</p>
+                    
+                    <div class="bg-white p-4 rounded-2xl shadow-lg max-w-[260px] mx-auto border-4 border-brand-100">
+                        <img src="QR Code.png" alt="Donate QR Code" class="w-full h-auto object-contain rounded-lg">
+                    </div>
+                    
+                    <p class="text-xs text-pink-200 italic" data-km="រាល់ទឹកប្រាក់របស់អ្នក គឺជាពន្លឺថ្ងៃថ្មីសម្រាប់កុមារអូទីស្សឹម" data-en="Every contribution of yours is a new ray of hope for autistic children">
+                        ✨ រាល់ទឹកប្រាក់របស់អ្នក គឺជាពន្លឺថ្ងៃថ្មីសម្រាប់កុមារអូទីស្សឹម ✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <section id="vision-mission" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase" data-km="ទស្សនវិស័យ និងបេសកកម្ម" data-en="Vision & Mission">ទស្សនវិស័យ និងបេសកកម្ម</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 mb-4" data-km="គោលដៅ និងទិសដៅអភិវឌ្ឍន៍សាលា" data-en="School Goals & Development Direction">គោលដៅ និងទិសដៅអភិវឌ្ឍន៍សាលា</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="w-12 h-12 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl shadow">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900" data-km="ចក្ខុវិស័យ (Vision)" data-en="VISION">ចក្ខុវិស័យ (Vision)</h3>
+                    <p class="text-slate-700 leading-relaxed text-sm sm:text-base" data-km="បង្កើតសាលាអប់រំពិសេសសម្រាប់កុមារមានបញ្ហាអូទីស្សឹម ដោយអមដំណើរពួកគាត់ឆ្ពោះទៅរកការលូតលាស់ផ្នែកអប់រំ និងឆ្លើយតបទៅនឹងតម្រូវការផ្នែកអារម្មណ៍ និងសង្គម។ GSES ជួយឱ្យកុមារបង្ហាញសមត្ថភាពបុគ្គល និងអត្តសញ្ញាណរៀងៗខ្លួន。" data-en="To establish a special school for children affected by autism spectrum disorder, by accompanying them towards educational growth and by meeting their needs as emotional and social level. GSES aims to help to express one's personal and individual abilities in one's own modality.">
+                        បង្កើតសាលាអប់រំពិសេសសម្រាប់កុមារមានបញ្ហាអូទីស្សឹម ដោយអមដំណើរពួកគាត់ឆ្ពោះទៅរកការលូតលាស់ផ្នែកអប់រំ និងឆ្លើយតបទៅនឹងតម្រូវការផ្នែកអារម្មណ៍ និងសង្គម។ GSES ជួយឱ្យកុមារបង្ហាញសមត្ថភាពបុគ្គល និងអត្តសញ្ញាណរៀងៗខ្លួន。
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+                    <div class="w-12 h-12 bg-brand-600 text-white rounded-2xl flex items-center justify-center text-xl shadow">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900" data-km="បេសកកម្ម (Mission)" data-en="MISSION">បេសកកម្ម (Mission)</h3>
+                    <p class="text-slate-700 leading-relaxed text-sm sm:text-base" data-km="ធានាការបណ្តុះបណ្តាល និងឯកទេសល្អបំផុតសម្រាប់លោកគ្រូ-អ្នកគ្រូនៅកម្ពុជា។ លើកកម្ពស់ការបង្កើត និងការចូលរួមរបស់ឪពុកម្តាយ និងញាតិមិត្ត ដើម្បីកែលម្អគុណភាពជីវិត ការអប់រំរួមបញ្ចូលគ្នា និងអភិវឌ្ឍជំនាញទំនាក់ទំនងក្នុងសង្គម。" data-en="To ensure the best training and specialization for educators / teachers in Cambodia. To promote formation and participation for autistic children's parents and relatives, in order to improve quality of life, inclusive education and to develop skills and integrate relationships inside the society.">
+                        ធានាការបណ្តុះបណ្តាល និងឯកទេសល្អបំផុតសម្រាប់លោកគ្រូ-អ្នកគ្រូនៅកម្ពុជា។ លើកកម្ពស់ការបង្កើត និងការចូលរួមរបស់ឪពុកម្តាយ និងញាតិមិត្ត ដើម្បីកែលម្អគុណភាពជីវិត ការអប់រំរួមបញ្ចូលគ្នា និងអភិវឌ្ឍជំនាញទំនាក់ទំនងក្នុងសង្គម。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Goals Section -->
+    <section id="services-goals" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase" data-km="សេវាកម្ម និងគោលដៅសាលា" data-en="School Services & Goals">សេវាកម្ម និងគោលដៅសាលា</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 mb-4" data-km="សេវាកម្ម និងគោលដៅរបស់ GSES" data-en="GSES: Our Services & Goals">សេវាកម្ម និងគោលដៅរបស់ GSES</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Our Services -->
+                <div class="bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="text-xl font-bold text-brand-700 flex items-center gap-2" data-km="សេវាកម្មរបស់យើង" data-en="OUR SERVICES">
+                        <i class="fas fa-concierge-bell"></i> <span data-km="សេវាកម្មរបស់យើង" data-en="OUR SERVICES">សេវាកម្មរបស់យើង</span>
+                    </h3>
+                    <ul class="space-y-4 text-sm sm:text-base text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="សម្រាប់តែកុមារមានបញ្ហាអូទីស្សឹម (ASD) ដែលមានការរោគវិនិច្ឆ័យពីមជ្ឈមណ្ឌល CCAMH ដែលមានអាយុពី ៣ ដល់ ១៤ឆ្នាំប៉ុណ្ណោះ。" data-en="For ASD children with diagnosis from CCAMH from 3 to 14 years old only.">សម្រាប់តែកុមារមានបញ្ហាអូទីស្សឹម (ASD) ដែលមានការរោគវិនិច្ឆ័យពីមជ្ឈមណ្ឌល CCAMH ដែលមានអាយុពី ៣ ដល់ ១៤ឆ្នាំប៉ុណ្ណោះ。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="អ្នកផ្តល់សេវាអប់រំពិសេស" data-en="Special Education Providers">អ្នកផ្តល់សេវាអប់រំពិសេស</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="លោកគ្រូ-អ្នកគ្រូមានសមត្ថភាព និងវិជ្ជាជីវៈច្បាស់លាស់" data-en="Qualified Educators">លោកគ្រូ-អ្នកគ្រូមានសមត្ថភាព និងវិជ្ជាជីវៈច្បាស់លាស់</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="បរិយាកាសកក់ក្តៅដូចគ្រួសារ" data-en="Family Environment">បរិយាកាសកក់ក្តៅដូចគ្រួសារ</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="វិធីសាស្ត្រអប់រំ VBT និង ABA" data-en="VBT, ABA Approach">វិធីសាស្ត្រអប់រំ VBT និង ABA</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- GSES: The Goals -->
+                <div class="bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+                    <h3 class="text-xl font-bold text-brand-700 flex items-center gap-2" data-km="គោលដៅរបស់ GSES" data-en="GSES: THE GOALS">
+                        <i class="fas fa-bullseye"></i> <span data-km="គោលដៅរបស់ GSES" data-en="GSES: THE GOALS">គោលដៅរបស់ GSES</span>
+                    </h3>
+                    <ul class="space-y-4 text-sm sm:text-base text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-angle-right text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="ផ្តល់ការអភិវឌ្ឍផ្នែកសង្គម អារម្មណ៍ និងភាសាដល់កុមារដែលមានបញ្ហាអូទីស្សឹម (ASD) ពិការភាពផ្នែកបញ្ញា និងតម្រូវការអប់រំពិសេស。" data-en="To provide social, emotional and language development to children affected by autism spectrum disorder, intellectual disabilities and special educational need.">ផ្តល់ការអភិវឌ្ឍផ្នែកសង្គម អារម្មណ៍ និងភាសាដល់កុមារដែលមានបញ្ហាអូទីស្សឹម (ASD) ពិការភាពផ្នែកបញ្ញា និងតម្រូវការអប់រំពិសេស。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-angle-right text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="បញ្ចូលកុមារដែលមានតម្រូវការពិសេសឱ្យចូលរៀនក្នុងសាលារដ្ឋទូទៅតាមពេលវេលាជាក់ស្តែង。" data-en="To integrate children with special needs into regular public schools over time.">បញ្ចូលកុមារដែលមានតម្រូវការពិសេសឱ្យចូលរៀនក្នុងសាលារដ្ឋទូទៅតាមពេលវេលាជាក់ស្តែង。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-angle-right text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="បន្តកិច្ចសហការដ៏ល្អប្រសើរជាមួយក្រសួងអប់រំ តាមរយៈការបង្កើតសៀវភៅណែនាំថ្នាក់ជាតិស្តីពី «ការបង្រៀនកុមារមានពិការភាពផ្នែកបញ្ញា»。" data-en="To continue the ongoing fruitful collaboration with the Ministry of Education by developing a national manual 'Teaching children with intellectual disability'.">បន្តកិច្ចសហការដ៏ល្អប្រសើរជាមួយក្រសួងអប់រំ តាមរយៈការបង្កើតសៀវភៅណែនាំថ្នាក់ជាតិស្តីពី «ការបង្រៀនកុមារមានពិការភាពផ្នែកបញ្ញា»。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-angle-right text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="អនុវត្តគម្រោងអប់រំដោយមានអគារសិក្សាត្រឹមត្រូវ និងគ្រប់គ្រាន់សម្រាប់កុមារមានតម្រូវការពិសេស。" data-en="To carry out educational projects by having a proper building, adequate for the children with special needs.">អនុវត្តគម្រោងអប់រំដោយមានអគារសិក្សាត្រឹមត្រូវ និងគ្រប់គ្រាន់សម្រាប់កុមារមានតម្រូវការពិសេស。</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-angle-right text-brand-600 mt-1 shrink-0"></i>
+                            <span data-km="ណែនាំឪពុកម្តាយ និងញាតិមិត្តអំពីមធ្យោបាយដ៏ល្អបំផុតដើម្បីកែលម្អជំនាញផ្ទាល់ខ្លួនរបស់កូនៗពួកគេ。" data-en="To guide parents and relatives on the best way to improve their children's personal skills.">ណែនាំឪពុកម្តាយ និងញាតិមិត្តអំពីមធ្យោបាយដ៏ល្អបំផុតដើម្បីកែលម្អជំនាញផ្ទាល់ខ្លួនរបស់កូនៗពួកគេ。</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizational Chart Section -->
+    <section id="organization" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase" data-km="រចនាសម្ព័ន្ធដឹកនាំ" data-en="Organizational Chart">រចនាសម្ព័ន្ធដឹកនាំ</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 mb-4" data-km="គណៈកម្មការ និងថ្នាក់ដឹកនាំសាលា" data-en="School Committee and Leaders">គណៈកម្មការ និងថ្នាក់ដឹកនាំសាលា</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 text-center space-y-4">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-brand-600 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=300" alt="Father Francois" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-xs bg-brand-100 text-brand-700 font-semibold px-3 py-1 rounded-full" data-km="ក្រុមប្រឹក្សាភិបាល" data-en="Board of Directors">ក្រុមប្រឹក្សាភិបាល</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-2" data-km="លោកពុក Francois" data-en="Father Francois">លោកពុក Francois</h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 text-center space-y-4">
+                        <div class="w-28 h-28 mx-auto rounded-full overflow-hidden border-4 border-brand-600 shadow-md">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" alt="Phoik Many" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-xs bg-brand-100 text-brand-700 font-semibold px-3 py-1 rounded-full" data-km="ប្រធានសាលា" data-en="Director">ប្រធានសាលា</span>
+                            <h3 class="text-xl font-bold text-slate-900 mt-2" data-km="លោកស្រី ភោគ ម៉ានី" data-en="Mrs. Phoik Many">លោកស្រី ភោគ ម៉ានី</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 text-center space-y-4">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-brand-600 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300" alt="Oeung Sopheak" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-xs bg-slate-100 text-slate-700 font-semibold px-3 py-1 rounded-full" data-km="អនុប្រធាន" data-en="Vice Director">អនុប្រធាន</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1" data-km="លោក អ៊ួង សុភ័ក្រ្ត" data-en="Mr. Oeung Sopheak">លោក អ៊ួង សុភ័ក្រ្ត</h3>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 text-center space-y-4">
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-brand-600 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300" alt="Sorn Mony" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <span class="text-xs bg-slate-100 text-slate-700 font-semibold px-3 py-1 rounded-full" data-km="អនុប្រធាន" data-en="Vice Director">អនុប្រធាន</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-1" data-km="លោក សន មុន្នី" data-en="Mr. Sorn Mony">លោក សន មុន្នី</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="max-w-6xl mx-auto">
+                    <h3 class="text-center text-lg font-bold text-slate-700 mb-6" data-km="សមាជិកគណៈកម្មការ និងបុគ្គលិក" data-en="Committee Members & Staff">សមាជិកគណៈកម្មការ និងបុគ្គលិក</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border text-center space-y-3">
+                            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-brand-300">
+                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=200" alt="Member" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-sm" data-km="លោក ឆៃ សោភ័ណ្ឌរ័ត្ន" data-en="Mr. Chhai Sophoanrat">លោក ឆៃ សោភ័ណ្ឌរ័ត្ន</h4>
+                            <p class="text-xs text-brand-600 font-medium" data-km="សមាជិក" data-en="Member">សមាជិក</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border text-center space-y-3">
+                            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-brand-300">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200" alt="Member" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-sm" data-km="អ្នកស្រី ស៊ូ ភីណា" data-en="Mrs. Sou Phina">អ្នកស្រី ស៊ូ ភីណា</h4>
+                            <p class="text-xs text-brand-600 font-medium" data-km="សមាជិក" data-en="Member">សមាជិក</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border text-center space-y-3">
+                            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-brand-300">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=200" alt="Member" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-sm" data-km="អ្នកស្រី យឹម រស្មី" data-en="Mrs. Yim Raksmey">អ្នកស្រី យឹម រស្មី</h4>
+                            <p class="text-xs text-brand-600 font-medium" data-km="សមាជិក" data-en="Member">សមាជិក</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border text-center space-y-3">
+                            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-brand-300">
+                                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200" alt="Member" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-sm" data-km="លោក រុន ភត្រ្តា" data-en="Mr. Roun Phetra">លោក រុន ភត្រ្តា</h4>
+                            <p class="text-xs text-brand-600 font-medium" data-km="សមាជិក" data-en="Member">សមាជិក</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border text-center space-y-3">
+                            <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border border-brand-300">
+                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=200" alt="Member" class="w-full h-full object-cover">
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-sm" data-km="កញ្ញា ឌិន មករា" data-en="Ms. Din Makara">កញ្ញា ឌិន មករា</h4>
+                            <p class="text-xs text-brand-600 font-medium" data-km="សមាជិក" data-en="Member">សមាជិក</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice & Tuition Fees Section -->
+    <section id="notice" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 text-brand-600 font-bold text-sm tracking-wider uppercase bg-brand-50 px-4 py-1 rounded-full">
+                    <i class="fas fa-bullhorn animate-bounce"></i> <span data-km="សេចក្តីជូនដំណឹងផ្លូវការ" data-en="Official Notice">សេចក្តីជូនដំណឹងផ្លូវការ</span>
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4" data-km="តម្រូវការសិក្សា និងតម្លៃសេវាសិក្សា" data-en="Study Requirements and Tuition Fees">តម្រូវការសិក្សា និងតម្លៃសេវាសិក្សា</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600" data-km="ព័ត៌មានលម្អិតស្តីពីតម្លៃសិក្សាតាមខែ/ឆ្នាំ និងការបញ្ចុះតម្លៃពិសេសសម្រាប់សិស្សានុសិស្ស。" data-en="Detailed information regarding monthly/annual tuition fees and special discounts for students.">ព័ត៌មានលម្អិតស្តីពីតម្លៃសិក្សាតាមខែ/ឆ្នាំ និងការបញ្ចុះតម្លៃពិសេសសម្រាប់សិស្សានុសិស្ស。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="lg:col-span-1 space-y-6">
+                    <div class="bg-gradient-to-br from-brand-700 to-brand-800 text-white p-8 rounded-3xl shadow-xl space-y-6">
+                        <div class="border-b border-white/20 pb-4">
+                            <p class="text-pink-200 text-xs font-semibold uppercase tracking-wider" data-km="តម្លៃសិក្សាក្នុងមួយខែ" data-en="Monthly Tuition Fee">តម្លៃសិក្សាក្នុងមួយខែ</p>
+                            <h3 class="text-4xl font-black mt-1">$100 <span class="text-lg font-normal text-pink-100" data-km="/ ១ខែ" data-en="/ Month">/ ១ខែ</span></h3>
+                        </div>
+                        <div class="border-b border-white/20 pb-4">
+                            <p class="text-pink-200 text-xs font-semibold uppercase tracking-wider" data-km="ថ្លៃរដ្ឋបាលប្រចាំឆ្នាំ" data-en="Annual Administration Fee">ថ្លៃរដ្ឋបាលប្រចាំឆ្នាំ</p>
+                            <h3 class="text-3xl font-black mt-1">$100 <span class="text-base font-normal text-pink-100" data-km="/ ឆ្នាំ" data-en="/ Year">/ ឆ្នាំ</span></h3>
+                        </div>
+                        <div>
+                            <p class="text-pink-200 text-xs font-semibold uppercase tracking-wider mb-2" data-km="ជំនាញផ្សេងៗបន្ថែម៖" data-en="Additional Skills:">ជំនាញផ្សេងៗបន្ថែម៖</p>
+                            <p class="text-sm font-medium leading-relaxed bg-white/10 p-3 rounded-2xl" data-km="១. ថ្នាក់កុំព្យូទ័រ &nbsp; ២. ថ្នាក់របាំ &nbsp; ៣. ថ្នាក់កាហ្វេ <br>៤. ថ្នាក់នំ &nbsp; ៥. ថ្នាក់គំនូរ &nbsp; ៦. ថ្នាក់ព្យាណូ" data-en="1. Computer Class &nbsp; 2. Dance Class &nbsp; 3. Coffee Class <br>4. Baking Class &nbsp; 5. Painting Class &nbsp; 6. Piano Class">
+                                ១. ថ្នាក់កុំព្យូទ័រ &nbsp; ២. ថ្នាក់របាំ &nbsp; ៣. ថ្នាក់កាហ្វេ <br>
+                                ៤. ថ្នាក់នំ &nbsp; ៥. ថ្នាក់គំនូរ &nbsp; ៦. ថ្នាក់ព្យាណូ <br>
+                                <span class="text-pink-200 font-bold block mt-2" data-km="👉 $10 / ខែ ក្នុងមួយជំនាញបង់បន្ថែម" data-en="👉 $10 / month per additional skill">👉 $10 / ខែ ក្នុងមួយជំនាញបង់បន្ថែម</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-3xl shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                        <i class="fas fa-table text-brand-600"></i> <span data-km="តារាងតម្លៃបង់ប្រាក់ និងការបញ្ចុះតម្លៃ" data-en="Payment Schedule and Discounts">តារាងតម្លៃបង់ប្រាក់ និងការបញ្ចុះតម្លៃ</span>
+                    </h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+                            <thead>
+                                <tr class="bg-brand-700 text-white text-sm">
+                                    <th class="p-3.5" data-km="បង់ប្រាក់ប្រចាំខែ" data-en="Payment Period">បង់ប្រាក់ប្រចាំខែ</th>
+                                    <th class="p-3.5" data-km="តម្លៃ" data-en="Price">តម្លៃ</th>
+                                    <th class="p-3.5" data-km="បញ្ចុះតម្លៃ" data-en="Discount">បញ្ចុះតម្លៃ</th>
+                                    <th class="p-3.5" data-km="សរុប" data-en="Total">សរុប</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 text-sm">
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="p-3.5 font-medium" data-km="១ ខែ" data-en="1 Month">១ ខែ</td>
+                                    <td class="p-3.5">$100</td>
+                                    <td class="p-3.5 text-slate-500">0%</td>
+                                    <td class="p-3.5 font-bold text-brand-700">$100</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="p-3.5 font-medium" data-km="៣ ខែ" data-en="3 Months">៣ ខែ</td>
+                                    <td class="p-3.5">$300</td>
+                                    <td class="p-3.5 text-emerald-600 font-semibold">5%</td>
+                                    <td class="p-3.5 font-bold text-brand-700">$285</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="p-3.5 font-medium" data-km="៦ ខែ" data-en="6 Months">៦ ខែ</td>
+                                    <td class="p-3.5">$600</td>
+                                    <td class="p-3.5 text-emerald-600 font-semibold">10%</td>
+                                    <td class="p-3.5 font-bold text-brand-700">$540</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50 transition bg-brand-50/50">
+                                    <td class="p-3.5 font-medium" data-km="១២ ខែ" data-en="12 Months">១២ ខែ</td>
+                                    <td class="p-3.5">$1200</td>
+                                    <td class="p-3.5 text-emerald-600 font-semibold">10%</td>
+                                    <td class="p-3.5 font-bold text-brand-700">$1080</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-slate-200 text-center sm:text-left flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <p class="text-xs text-slate-500 leading-relaxed" data-km="អាស្រ័យតាមការជូនដំណឹងខាងលើ សាលាចាប់ផ្តើមអនុវត្តនៅថ្ងៃទី០១ ខែមករា ឆ្នាំ២០២៤。" data-en="According to the above notice, the school begins implementation on January 1, 2024.">
+                            <i class="fas fa-info-circle text-brand-600 mr-1"></i> អាស្រ័យតាមការជូនដំណឹងខាងលើ សាលាចាប់ផ្តើមអនុវត្តនៅថ្ងៃទី០១ ខែមករា ឆ្នាំ២០២៤。
+                        </p>
+                        <a href="https://t.me/012713148" target="_blank" class="bg-brand-600 text-white px-5 py-2.5 rounded-xl text-xs font-semibold hover:bg-brand-700 transition shadow" data-km="ចុះឈ្មោះចូលរៀនឥឡូវនេះ" data-en="Register Now">
+                            ចុះឈ្មោះចូលរៀនឥឡូវនេះ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="py-20 bg-brand-800 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+            <span class="bg-white/10 text-pink-200 text-xs font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider" data-km="សមិទ្ធផលបច្ចុប្បន្ន" data-en="Current Achievements">
+                សមិទ្ធផលបច្ចុប្បន្ន
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-bold mt-3 mb-4" data-km="ស្ថិតិសាលាអប់រំពិសេសនៃការលូតលាស់" data-en="School Statistics">ស្ថិតិសាលាអប់រំពិសេសនៃការលូតលាស់</h2>
+            <div class="w-20 h-1.5 bg-pink-400 mx-auto rounded-full mb-12"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/15 shadow-xl hover:bg-white/15 transition">
+                    <div class="text-3xl sm:text-4xl font-extrabold mb-2 text-pink-300">៣៣០ នាក់</div>
+                    <p class="text-base font-medium text-slate-100" data-km="សិស្សសរុប (បច្ចុប្បន្ន)" data-en="Total Students">សិស្សសរុប (បច្ចុប្បន្ន)</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/15 shadow-xl hover:bg-white/15 transition">
+                    <div class="text-3xl sm:text-4xl font-extrabold mb-2 text-pink-300">១១០ នាក់</div>
+                    <p class="text-base font-medium text-slate-100" data-km="បុគ្គលិកសរុប" data-en="Total Staff">បុគ្គលិកសរុប</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/15 shadow-xl hover:bg-white/15 transition">
+                    <div class="text-3xl sm:text-4xl font-extrabold mb-2 text-pink-300">២០ ថ្នាក់</div>
+                    <p class="text-base font-medium text-slate-100" data-km="ថ្នាក់រៀនសរុប" data-en="Total Classrooms">ថ្នាក់រៀនសរុប</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md p-6 rounded-3xl border border-white/15 shadow-xl hover:bg-white/15 transition">
+                    <div class="text-3xl sm:text-4xl font-extrabold mb-2 text-pink-300">៤ ផ្ទះល្វែង</div>
+                    <p class="text-base font-medium text-slate-100" data-km="អគារសិក្សាសរុប" data-en="Total Buildings">អគារសិក្សាសរុប</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs & Skill Classes Section -->
+    <section id="programs" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-bold text-sm tracking-wider uppercase" data-km="កម្មវិធីបណ្តុះបណ្តាល" data-en="Training Programs">កម្មវិធីបណ្តុះបណ្តាល</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2 mb-4" data-km="ថ្នាក់ជំនាញ និងសកម្មភាពអភិវឌ្ឍន៍សិស្ស" data-en="Skill Classes & Student Development Activities">ថ្នាក់ជំនាញ និងសកម្មភាពអភិវឌ្ឍន៍សិស្ស</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600" data-km="សាលាបានបង្កើតឡើងនូវថ្នាក់ជំនាញជាច្រើន ដើម្បីឱ្យសិស្សានុសិស្សទទួលបានបទពិសោធន៍ការងារ និងជំនាញជាប់ខ្លួន：" data-en="The school has created many skill classes so that students can gain work experience and self-reliant skills:">សាលាបានបង្កើតឡើងនូវថ្នាក់ជំនាញជាច្រើន ដើម្បីឱ្យសិស្សានុសិស្សទទួលបានបទពិសោធន៍ការងារ និងជំនាញជាប់ខ្លួន៖</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:border-brand-300 transition group">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 group-hover:bg-brand-600 group-hover:text-white transition shadow-inner">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2" data-km="ថ្នាក់កុំព្យូទ័រ" data-en="Computer Class">ថ្នាក់កុំព្យូទ័រ</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-km="បណ្តុះបណ្តាលជំនាញបច្ចេកវិទ្យា និងការវាយអត្ថបទរៀនសូត្រតាមប្រព័ន្ធឌីជីថល。" data-en="Training in technology skills and digital typing learning.">បណ្តុះបណ្តាលជំនាញបច្ចេកវិទ្យា និងការវាយអត្ថបទរៀនសូត្រតាមប្រព័ន្ធឌីជីថល。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:border-brand-300 transition group">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 group-hover:bg-brand-600 group-hover:text-white transition shadow-inner">
+                        <i class="fas fa-child-reaching"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2" data-km="ថ្នាក់របាំ" data-en="Dance Class">ថ្នាក់របាំ</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-km="ហាត់ប្រាណ ចលនារាងកាយ និងទស្សនីយភាពសិល្បៈវប្បធម៌ប្រពៃណី。" data-en="Physical exercise, body movement, and traditional cultural art performances.">ហាត់ប្រាណ ចលនារាងកាយ និងទស្សនីយភាពសិល្បៈវប្បធម៌ប្រពៃណី。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:border-brand-300 transition group">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 group-hover:bg-brand-600 group-hover:text-white transition shadow-inner">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2" data-km="ថ្នាក់កាហ្វេ" data-en="Coffee Class">ថ្នាក់កាហ្វេ</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-km="រៀនពីជំនាញឆុងកាហ្វេ ភេសជ្ជៈ និងការរៀបចំសេវាកម្មផ្នែកអាហារដ្ឋាន。" data-en="Learning coffee brewing, beverage making, and cafeteria service organization.">រៀនពីជំនាញឆុងកាហ្វេ ភេសជ្ជៈ និងការរៀបចំសេវាកម្មផ្នែកអាហារដ្ឋាន。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-brand-300 text-center hover:shadow-md hover:border-brand-400 transition group relative overflow-hidden">
+                    <span class="absolute top-3 right-3 bg-brand-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full" data-km="ថ្មី" data-en="NEW">ថ្មី</span>
+                    <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 group-hover:bg-brand-600 group-hover:text-white transition shadow-inner">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2" data-km="ថ្នាក់នំ" data-en="Baking Class">ថ្នាក់នំ</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-km="បណ្តុះបណ្តាលជំនាញធ្វើនំ និងការរៀបចំម្ហូបអាហារបែបតុបតែងដើម្បីអភិវឌ្ឍន៍ដៃ និងការច្នៃប្រឌិត。" data-en="Training in baking skills and pastry preparation to develop hand coordination and creativity.">បណ្តុះបណ្តាលជំនាញធ្វើនំ និងការរៀបចំម្ហូបអាហារបែបតុបតែងដើម្បីអភិវឌ្ឍន៍ដៃ និងការច្នៃប្រឌិត。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:border-brand-300 transition group">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 group-hover:bg-brand-600 group-hover:text-white transition shadow-inner">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2" data-km="ថ្នាក់គំនូរ" data-en="Painting Class">ថ្នាក់គំនូរ</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-km="អភិវឌ្ឍការច្នៃប្រឌិត ការប្រើប្រាស់ពណ៌ និងការបង្ហាញអារម្មណ៍តាមរយៈស្នាដៃសិល្បៈ。" data-en="Developing creativity, color usage, and emotional expression through artwork.">អភិវឌ្ឍការច្នៃប្រឌិត ការប្រើប្រាស់ពណ៌ និងការបង្ហាញអារម្មណ៍តាមរយៈស្នាដៃសិល្បៈ。</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:border-brand-300 transition group">
+                    <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-5 group-hover:bg-brand-600 group-hover:text-white transition shadow-inner">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="font-bold text-slate-900 text-lg mb-2" data-km="ថ្នាក់ព្យាណូ" data-en="Piano Class">ថ្នាក់ព្យាណូ</h3>
+                    <p class="text-xs text-slate-500 leading-relaxed" data-km="ស្ដាប់សំឡេងភ្លេង សិក្សាកំណត់ចំណាំ និងហាត់တီးព្យាណូកំសាន្ត。" data-en="Listening to music, studying notes, and practicing piano playing recreationally.">ស្ដាប់សំឡេងភ្លេង សិក្សាកំណត់ចំណាំ និងហាត់တီးព្យាណូកំសាន្ត。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-gradient-to-br from-brand-800 to-brand-600 rounded-3xl p-8 sm:p-12 text-white shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div class="space-y-6">
+                    <div>
+                        <span class="bg-white/15 text-pink-200 text-xs font-semibold px-3.5 py-1 rounded-full uppercase tracking-wider" data-km="ការទំនាក់ទំនង" data-en="Contact Us">
+                            ការទំនាក់ទំនង
+                        </span>
+                        <h2 class="text-2xl sm:text-3xl font-bold mt-3 mb-2" data-km="សាលាអប់រំពិសេសនៃការលូតលាស់" data-en="Growing Special Education School">សាលាអប់រំពិសេសនៃការលូតលាស់</h2>
+                        <p class="text-pink-100 text-sm leading-relaxed" data-km="អាសយដ្ឋាន៖ #157A St10BT Sansom Kosal 2 Village, Beong Tumpun 1 commune, Mean Chey district, Phnom Penh, Cambodia" data-en="Address: #157A St10BT Sansom Kosal 2 Village, Beong Tumpun 1 commune, Mean Chey district, Phnom Penh, Cambodia">
+                            <i class="fas fa-map-marker-alt text-pink-300 mr-1.5"></i> <b>Address:</b> #157A St10BT Sansom Kosal 2 Village, Beong Tumpun 1 commune, Mean Chey district, Phnom Penh, Cambodia。
+                        </p>
+                    </div>
+
+                    <div class="space-y-3 pt-1 border-t border-white/15">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-lg shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="text-base font-medium">Telegram / Phone: <b>+855 12 713 148</b></span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-lg shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span class="text-base font-medium">Email: <b>samnagphok@yahoo.com</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 space-y-4 shadow-inner">
+                    <h3 class="text-xl font-bold mb-3" data-km="បណ្តាញសង្គមផ្លូវការ (Socials)" data-en="Official Social Media">បណ្តាញសង្គមផ្លូវការ (Socials)</h3>
+                    <div class="space-y-3">
+                        <a href="https://www.facebook.com/profile.php?id=100027584873077" target="_blank" class="flex items-center gap-3.5 bg-white/10 hover:bg-white/20 p-3.5 rounded-xl transition">
+                            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center shrink-0">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-pink-200">Facebook Page</p>
+                                <p class="font-medium text-sm">Growing Special Education School</p>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/@GSES_SpecialSchool" target="_blank" class="flex items-center gap-3.5 bg-white/10 hover:bg-white/20 p-3.5 rounded-xl transition">
+                            <div class="w-8 h-8 rounded-lg bg-red-600 text-white flex items-center justify-center shrink-0">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-pink-200">YouTube Channel</p>
+                                <p class="font-medium text-sm">/@GSES_SpecialSchool</p>
+                            </div>
+                        </a>
+                        <a href="https://www.tiktok.com/@gses_school" target="_blank" class="flex items-center gap-3.5 bg-white/10 hover:bg-white/20 p-3.5 rounded-xl transition">
+                            <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center shrink-0">
+                                <i class="fab fa-tiktok"></i>
+                            </div>
+                            <div>
+                                <p class="text-[11px] text-pink-200">TikTok</p>
+                                <p class="font-medium text-sm">/@gses_school</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="text-white font-medium" data-km="សាលាអប់រំពិសេសនៃការលូតលាស់ (Growing Special Education School - GSES)" data-en="Growing Special Education School (GSES)">សាលាអប់រំពិសេសនៃការលូតលាស់ (Growing Special Education School - GSES)</p>
+            <p>&copy; 2026 <span data-km="រក្សាសិទ្ធិគ្រប់យ៉ាងដោយសាលា GSES。" data-en="All rights reserved by GSES school.">រក្សាសិទ្ធិគ្រប់យ៉ាងដោយសាលា GSES。</span> God bless the kids with autism, their parents, educators and guardians! Amen</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Language Toggle -->
+    <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        let currentLang = 'km';
+        function switchLanguage() {
+            currentLang = currentLang === 'km' ? 'en' : 'km';
+            document.getElementById('lang-text').innerText = currentLang === 'km' ? 'English' : 'ភាសាខ្មែរ';
+            
+            // Toggle HTML lang attribute
+            document.getElementById('html-root').setAttribute('lang', currentLang);
+
+            // Find all elements with data-km attribute and update their text
+            const elements = document.querySelectorAll('[data-km]');
+            elements.forEach(el => {
+                if (currentLang === 'en') {
+                    if(el.hasAttribute('data-en')) {
+                        el.innerHTML = el.getAttribute('data-en');
+                    }
+                } else {
+                    el.innerHTML = el.getAttribute('data-km');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
